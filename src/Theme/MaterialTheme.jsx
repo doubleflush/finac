@@ -1,12 +1,14 @@
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import React from "react";
+import colorScheme from './colorScheme.json';
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#880061",
+      main: colorScheme.primary,
     },
     secondary: {
-      main: "#ee0290",
+      main: colorScheme.secondary,
     },
   },
 });

@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import colorScheme from './colorScheme.json';
 
 const theme = {
   colors: {
@@ -7,9 +8,9 @@ const theme = {
     persianGreen: "#06B49A",
     lightBlue: "#AFDBD2",
     onyx: "#36313D",
-    primary: "#880061",
-    secondary: "#ee0290",
-    tertiary: "#fbe2f0"
+    primary: colorScheme.primary,
+    secondary: colorScheme.secondary,
+    tertiary: colorScheme.tertiary
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Toolbar, Typography } from "@material-ui/core";
-import { Header, NavContainer, MenuContainer } from './NavBarStyles';
+import { Header, NavContainer, MenuContainer,MenuItem } from './NavBarStyles';
 
 
 export interface INavBarProps {}
@@ -27,7 +27,10 @@ export default class NavBar extends React.Component<
               </Typography>
             </Toolbar>
           </Header>
-          <MenuContainer/>
+          <MenuContainer>
+              <MenuItem selected={true}>Earnings</MenuItem>
+              <MenuItem selected={false}>Savings</MenuItem>
+          </MenuContainer>
       </NavContainer>
     );
   }
