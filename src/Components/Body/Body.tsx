@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { BodyRoot } from './BodyStyles';
+import IncomeTable from './../IncomeTable/IncomeTable';
+
 
 export interface IBodyProps {
 }
@@ -18,7 +20,7 @@ export default class Body extends React.Component<IBodyProps, IBodyState> {
   public render() {
     return (
       <BodyRoot>
-        <div style={{height: '140rem'}}>Content</div>
+        <IncomeTable/>
       </BodyRoot>
     );
   }
