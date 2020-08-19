@@ -6,7 +6,7 @@ export const RootContainer = styled.div`
     min-width: 100vw;
     max-height: 100vh;
     max-width: 100vw;
-    overflow: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
