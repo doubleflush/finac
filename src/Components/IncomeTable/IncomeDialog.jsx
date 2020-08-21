@@ -5,9 +5,17 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import {Form, HorizontalInput, Input} from "./IncomeTableStyles"; 
+import faker from "faker";
 
 export default function IncomeDialog(props) {
-    console.log(props);
+
+    const accounts = [];
+    for (let i = 0; i < 4; i++) {
+      accounts.push(faker.finance.accountName());
+    } 
+
+    console.log(accounts);
     return (
       <div>
         <Dialog
@@ -16,19 +24,45 @@ export default function IncomeDialog(props) {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+          <DialogTitle id="alert-dialog-title">{"New Income"}</DialogTitle>
           <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              Let Google help apps determine location. This means sending anonymous location data to
-              Google, even when no apps are running.
-            </DialogContentText>
+          <Form>
+            <Input id="date" type="date"
+              width="8rem"
+              label="Date of Transaction"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+            <HorizontalInput>
+              <Input id="source" label="From" />
+              <Input id="account" 
+                select
+                label="Receiving Account"
+                SelectProps={{
+                  native: true,
+                }}
+              >
+                {accounts.map((option) => (
+                  <option value={option}>
+                    {option}
+                  </option>
+                ))}
+              </Input>
+            </HorizontalInput>
+            <HorizontalInput>
+              <Input id="amount" label="Amount" 
+                type="number"
+                InputLabelProps={{
+                  shrink: true,
+                }} 
+              />
+            </HorizontalInput>
+          </Form>
           </DialogContent>
           <DialogActions>
-            <Button onClick={props.handleClose} color="primary">
-              Disagree
-            </Button>
             <Button onClick={props.handleClose} color="primary" autoFocus>
-              Agree
+              Add
             </Button>
           </DialogActions>
         </Dialog>

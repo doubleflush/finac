@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Button as MuiButton} from "@material-ui/core";
+import TextField from '@material-ui/core/TextField';
 
 export const Button = styled(MuiButton)`
   align-self: center !important;
@@ -69,4 +70,22 @@ export const Styles = styled.div`
     }
   }
 `;
+
+export const Form = styled.form`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+`;
+
+export const HorizontalInput = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Input = styled(TextField)`
+  margin: 2px;
+  variant: outlined;
+`;
+
 
